@@ -20,7 +20,7 @@ Other argumetns including new.x. See details.
 \details{
 For a new subject, new.x gives the covariate vector in the GORH model. The argument tp gives the sequence of time points
 that you want to calculate the survival probabilities. If tp is not specified, then a sequence of equally spaced numbers
-from the smallest to the largest left or right end points are used and 
+from 0 to the largest observation time in the data are used and 
 another argument len defines the number of equally 
 spaced time points for calculating the survival curve, default is 100.
 }

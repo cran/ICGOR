@@ -10,7 +10,7 @@ has closed forms based on the Louis method.
 }
 \usage{
 GORH(formula = formula(data), data = parent.frame(), r = 1, n.int = 5, order = 3, 
-max.iter = 100, cov.rate = 0.001)
+max.iter = 1000, cov.rate = 0.001)
 }
 \arguments{
   \item{formula}{
@@ -53,8 +53,7 @@ log-likelihood value(loglik).}
 \item{ParVcov}{The estimated covariance matrix of the coefficient Beta.}
 }
 \references{
-Zhou, J., Zhang, J. and Lu, W. (2016+). On Encient Estimation of Generalized Odds-Rate Models with Interval
-Censored Data. Submitted to Biometrics.
+Zhou, J., Zhang, J. and Lu, W. (2017+). An EM Algorithm for fitting the Generalized Odds-Rate Model to Interval Censored Data. Accepted by Statistics in Medicine.
 }
 
 \note{

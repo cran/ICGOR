@@ -9,9 +9,10 @@ function(sdata,Xp,r,n.int,order,max.iter,cov.rate){
    c.mat<-function(x) matrix(x,ncol=N,nrow=L)
 
    ti <- c(sdata$Li[sdata$d2 == 1], sdata$Ri[sdata$d3 == 0])
-   ti.max <- max(ti) + 1e-05
-   ti.min <- min(ti) - 1e-05
-   knots <- seq(ti.min, ti.max, length.out = (n.int + 2))
+   #ti.max <- max(ti) + 1e-05
+   #ti.min <- min(ti) - 1e-05
+   #knots <- seq(ti.min, ti.max, length.out = (n.int + 2))
+   knots <-quantile(ti,seq(0,1,length.out = (n.int + 2)))
 
    bl.Li<-bl.Ri<-matrix(0,nrow=L,ncol=N)
    bl.Li[,sdata$d1==0]<-Ispline(sdata$Li[sdata$d1==0],order=order,knots=knots)

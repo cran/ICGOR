@@ -1,7 +1,7 @@
 importFrom(survival,"Surv")
 importFrom(MASS,"ginv")
 importFrom(graphics, "lines", "plot")
-importFrom(stats, "coef", "model.extract", "model.matrix", "printCoefmat", "pt", "qnorm", "quantile", "rexp", "sd","stepfun", "terms","as.formula", "na.omit", "nlm", "pnorm")
+importFrom(stats, "coef", "model.extract", "model.matrix", "printCoefmat", "pt", "qnorm", "quantile", "rexp", "sd","stepfun", "terms","as.formula", "na.omit", "nlm", "pnorm","smooth.spline","predict")
 importFrom(ICsurv,"Ispline")
 importFrom(pracma,"hessian")
 export("GORH","summary.GORH","predict.GORH","plot.predict.GORH")

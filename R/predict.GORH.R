@@ -8,9 +8,14 @@ function(object,...){
      new.x<-as.vector(arg$new.x)
      mdata<-object$mdata
      ti<-unique(c(0,na.omit(mdata$Li),na.omit(mdata$Ri)))
-     if(is.null(arg$tp)) arg$tp<-seq(0,max(ti)+1e-5,length.out=arg$len)
+     if(is.null(arg$tp)) arg$tp<-seq(0,max(ti),length.out=arg$len)
      exb<-exp(sum(object$ParEst$Beta*new.x))
-     surv<-(1+object$ParEst$r*t(Ispline(arg$tp,order=object$ParEst$order,knots=object$ParEst$knots))%*%object$ParEst$gl*exb)^(-1/object$ParEst$r)
+
+     Het.est1<-t(Ispline(arg$tp[arg$tp<=max(ti)],order=object$ParEst$order,knots=object$ParEst$knots))%*%object$ParEst$gl
+     obj<-smooth.spline(arg$tp[arg$tp<=max(ti)],Het.est1)
+     Het.est2<-predict(obj,x=arg$tp[arg$tp>max(ti)],deriv=0)$y
+
+     surv<-(1+object$ParEst$r*c(Het.est1,Het.est2)*exb)^(-1/object$ParEst$r)
      pred<-list(SurvTime=arg$tp,SurvProb=surv)
      class(pred)<-"GORH"
      class(pred)<-"predict.GORH"

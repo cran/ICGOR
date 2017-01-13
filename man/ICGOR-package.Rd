@@ -14,8 +14,8 @@ an efficient solution for the GORH model based on a gamma-possion data augmentat
 \tabular{ll}{
 Package: \tab ICGOR\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2016-03-19\cr
+Version: \tab 2.0\cr
+Date: \tab 2017-01-12\cr
 License: \tab GPL-2\cr
 }
 The main function is GORH, which produces the estimates for coefficients and the covariance matrix. The summary function 
@@ -29,7 +29,6 @@ Jie Zhou, Jiajia Zhang, Wenbin Lu
 Maintainer: Jie Zhou <zhoujie02569@gmail.com>
 }
 \references{
-Zhou, J., Zhang, J. and Lu, W. (2016+). On Encient Estimation of Generalized Odds-Rate Models with Interval
-Censored Data. Submitted to Biometrics.
+Zhou, J., Zhang, J. and Lu, W. (2017+). An EM Algorithm for fitting the Generalized Odds-Rate Model to Interval Censored Data. Accepted by Statistics in Medicine.
 }
 \keyword{ package, generalized odds rate hazards model, interval censoring}

@@ -1,5 +1,5 @@
 GORH <-
-function(formula=formula(data),data=parent.frame(),r=1,n.int=5,order=3,max.iter=100,cov.rate=.001){
+function(formula=formula(data),data=parent.frame(),r=1,n.int=5,order=3,max.iter=1000,cov.rate=.001){
   sdata<-data
   call <- match.call()
   mf <- match.call(expand.dots = FALSE)
@@ -31,8 +31,8 @@ function(formula=formula(data),data=parent.frame(),r=1,n.int=5,order=3,max.iter=
    P<-ncol(Xp)
    N<-nrow(sdata)
    # Estimates
-   temp.est<-try(EM.Iter(sdata=sdata,Xp=Xp,r=r,n.int=n.int,order=order,max.iter=max.iter,cov.rate=cov.rate),silent=TRUE)
-   if(is.character(temp.est)) cat("ERROR: the EM algorithm does not converge.\n")
+   temp.est<-EM.Iter(sdata=sdata,Xp=Xp,r=r,n.int=n.int,order=order,max.iter=max.iter,cov.rate=cov.rate)
+   #if(is.character(temp.est)) cat("ERROR: the EM algorithm does not converge.\n")
    if(!is.character(temp.est)){
    # Variance
    temp.hess<-try(VCOV.calc(object=temp.est),silent=TRUE)
